@@ -1,0 +1,6 @@
+site_name: inclusive-hiring-sim report
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Results: results.md

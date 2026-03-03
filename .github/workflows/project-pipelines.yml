@@ -1,0 +1,87 @@
+name: Project Pipelines
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "default (first 3), all, or custom"
+        required: true
+        default: "default"
+        type: choice
+        options:
+          - default
+          - all
+          - custom
+      projects:
+        description: "Comma-separated project names (required when run_mode=custom)"
+        required: false
+        default: ""
+        type: string
+
+jobs:
+  select-projects:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.choose.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: choose
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t ALL_PROJECTS < <(find projects -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
+
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            SELECTED=("${ALL_PROJECTS[@]:0:3}")
+          else
+            MODE="${{ github.event.inputs.run_mode }}"
+            if [ "$MODE" = "all" ]; then
+              SELECTED=("${ALL_PROJECTS[@]}")
+            elif [ "$MODE" = "custom" ]; then
+              RAW="${{ github.event.inputs.projects }}"
+              if [ -z "$RAW" ]; then
+                echo "When run_mode=custom, provide comma-separated projects input." >&2
+                exit 1
+              fi
+              IFS=',' read -r -a CANDIDATES <<< "$RAW"
+              SELECTED=()
+              for item in "${CANDIDATES[@]}"; do
+                p="$(echo "$item" | xargs)"
+                [ -z "$p" ] && continue
+                if printf '%s\n' "${ALL_PROJECTS[@]}" | grep -Fxq "$p"; then
+                  SELECTED+=("$p")
+                else
+                  echo "Unknown project: $p" >&2
+                  exit 1
+                fi
+              done
+            else
+              SELECTED=("${ALL_PROJECTS[@]:0:3}")
+            fi
+          fi
+
+          if [ ${#SELECTED[@]} -eq 0 ]; then
+            echo "No projects selected." >&2
+            exit 1
+          fi
+
+          JSON=$(printf '%s\n' "${SELECTED[@]}" | jq -R . | jq -cs '{project: .}')
+          echo "matrix=$JSON" >> "$GITHUB_OUTPUT"
+          echo "Selected projects: ${SELECTED[*]}"
+
+  run-pipelines:
+    needs: select-projects
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.select-projects.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run project pipeline
+        run: python -m tooling.runner --project "${{ matrix.project }}"

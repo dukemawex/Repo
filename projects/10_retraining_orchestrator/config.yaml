@@ -1,0 +1,4 @@
+project_id: 10
+name: retraining_orchestrator
+owner: ml-team
+stage: prototype

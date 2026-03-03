@@ -1,0 +1,6 @@
+site_name: safe-rag-benchmark report
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Results: results.md

@@ -1,0 +1,6 @@
+site_name: misinformation-stance-mini report
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Results: results.md

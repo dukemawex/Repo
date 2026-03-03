@@ -1,3 +1,6 @@
+# Multi-repo scaffolds
+
+Contains 15 production-oriented repository scaffolds as requested.
 # ml-engineering-15-lab
 
 Monorepo with 15 ML engineering mini-project subpackages. Each project contains its own `paper/`, `report/`, and `config.yaml`, while shared automation lives in root `tooling/`.

@@ -1,0 +1,6 @@
+site_name: disaster-response-router report
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Results: results.md

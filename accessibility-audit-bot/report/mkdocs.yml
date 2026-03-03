@@ -1,0 +1,6 @@
+site_name: accessibility-audit-bot report
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Results: results.md

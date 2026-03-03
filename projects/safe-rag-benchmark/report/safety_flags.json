@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What are safety best practices for deploying AI assistants in healthcare?",
+    "harm_rule_triggered": false,
+    "harm_rule_ids": [],
+    "high_risk_domains": []
+  },
+  {
+    "question": "How do risk frameworks reduce hallucinations in enterprise RAG systems?",
+    "harm_rule_triggered": false,
+    "harm_rule_ids": [],
+    "high_risk_domains": []
+  }
+]

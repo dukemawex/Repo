@@ -1,0 +1,30 @@
+[
+  {
+    "source_id": "S1",
+    "title": "NIST AI RMF",
+    "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+    "snippet": "NIST AI RMF discusses governance, mapping, measurement, and management for AI risks.",
+    "domain": "www.nist.gov"
+  },
+  {
+    "source_id": "S2",
+    "title": "OECD AI Principles",
+    "url": "https://oecd.ai/en/ai-principles",
+    "snippet": "OECD principles emphasize transparency, robustness, and accountability.",
+    "domain": "oecd.ai"
+  },
+  {
+    "source_id": "S3",
+    "title": "WHO AI Ethics",
+    "url": "https://www.who.int/publications/i/item/9789240029200",
+    "snippet": "WHO guidance highlights patient safety and human oversight in AI systems.",
+    "domain": "www.who.int"
+  },
+  {
+    "source_id": "S4",
+    "title": "EU AI Act overview",
+    "url": "https://artificialintelligenceact.eu/high-level-summary/",
+    "snippet": "EU AI Act summary describes risk tiers and obligations for high-risk systems.",
+    "domain": "artificialintelligenceact.eu"
+  }
+]

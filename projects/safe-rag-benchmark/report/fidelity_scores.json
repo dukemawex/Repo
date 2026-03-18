@@ -1,0 +1,58 @@
+[
+  {
+    "question": "What are safety best practices for deploying AI assistants in healthcare?",
+    "claim_scores": [
+      {
+        "claim": "Risk frameworks recommend governance and continuous monitoring for AI systems.",
+        "supported": true,
+        "supporting_source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "claim": "Safety guidance emphasizes transparency and human oversight for high-impact deployments.",
+        "supported": true,
+        "supporting_source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "citation_precision": 1.0,
+    "citation_recall": 0.5,
+    "hallucination_proxy_rate": 0.0,
+    "retrieval_grounding_rate": 1.0
+  },
+  {
+    "question": "How do risk frameworks reduce hallucinations in enterprise RAG systems?",
+    "claim_scores": [
+      {
+        "claim": "Risk frameworks recommend governance and continuous monitoring for AI systems.",
+        "supported": true,
+        "supporting_source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "claim": "Safety guidance emphasizes transparency and human oversight for high-impact deployments.",
+        "supported": true,
+        "supporting_source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "citation_precision": 1.0,
+    "citation_recall": 0.5,
+    "hallucination_proxy_rate": 0.0,
+    "retrieval_grounding_rate": 1.0
+  }
+]

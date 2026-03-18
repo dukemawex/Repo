@@ -1,0 +1,13 @@
+name: safe-rag-benchmark
+owner: ml-platform
+runtime: python3.11
+entrypoints:
+  evaluate: "python -m safe_rag_benchmark.pipeline"
+  demo: "streamlit run safe_rag_benchmark/demo.py"
+artifacts:
+  - retrieval.jsonl
+  - answers.jsonl
+  - fidelity_scores.json
+  - safety_flags.json
+  - sources.json
+  - metrics.json

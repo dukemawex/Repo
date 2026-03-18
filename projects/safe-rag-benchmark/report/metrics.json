@@ -1,0 +1,9 @@
+{
+  "avg_citation_precision": 1.0,
+  "avg_citation_recall": 0.5,
+  "avg_hallucination_proxy_rate": 0.0,
+  "avg_retrieval_grounding_rate": 1.0,
+  "baseline_avg_hallucination_proxy_rate": 0.0,
+  "delta_hallucination_proxy_vs_baseline": 0.0,
+  "question_count": 2
+}

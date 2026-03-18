@@ -3,7 +3,7 @@
 Contains 15 production-oriented repository scaffolds as requested.
 # ml-engineering-15-lab
 
-Monorepo with 15 ML engineering mini-project subpackages. Each project contains its own `paper/`, `report/`, and `config.yaml`, while shared automation lives in root `tooling/`.
+Monorepo with 16 ML engineering mini-project subpackages. Each project contains its own `paper/`, `report/`, and `config.yaml`, while shared automation lives in root `tooling/`.
 
 ## Repository layout
 
@@ -35,6 +35,7 @@ python -m tooling.runner --project <project_name>
 - [`13_cost_latency_profiler`](projects/13_cost_latency_profiler/README.md): `python -m tooling.runner --project 13_cost_latency_profiler`
 - [`14_prompt_versioning_pipeline`](projects/14_prompt_versioning_pipeline/README.md): `python -m tooling.runner --project 14_prompt_versioning_pipeline`
 - [`15_multimodal_ingestion_starter`](projects/15_multimodal_ingestion_starter/README.md): `python -m tooling.runner --project 15_multimodal_ingestion_starter`
+- [`safe-rag-benchmark`](projects/safe-rag-benchmark/README.md): `python -m tooling.runner --project safe-rag-benchmark`
 
 ## CI behavior
 
